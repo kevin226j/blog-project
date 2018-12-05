@@ -1,0 +1,1 @@
+This project uses technologies: ASP.NET Core 2.0, React/Redux
