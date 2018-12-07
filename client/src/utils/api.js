@@ -25,7 +25,7 @@ const request = (url, options) =>
         const {status} = res
 
         if(status === 204) return {}
-        const json = response.json()
+        const json = res.json()
         if(status >= 200 && status < 400) return json
         return json.then(message =>{
             throw new RequestError(status, message)

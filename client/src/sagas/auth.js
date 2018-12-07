@@ -15,7 +15,7 @@ const authSaga = (url, thenGoTo) =>
             yield put(startApp())
             yield put(to(thenGoTo))
         } 
-        catch {
+        catch ({status, message}){
             yield call(reject, new SubmissionError(message))
         }
     }
