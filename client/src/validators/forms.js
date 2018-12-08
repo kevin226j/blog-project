@@ -29,8 +29,8 @@ export const lengthMoreThan = (
 
 export const lengthLessThan = (
     limit,
-    message = `Length should be more than ${limit}`
-) => str => (!str || str.length < limit ? message : undefined)
+    message = `Length should be less than ${limit}`
+) => str => (!str || str.length > limit ? message : undefined)
 
 export const minLength6 = minLength(6)
 
