@@ -3,37 +3,46 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^3.6.1",
+    "@material-ui/core": "^3.1.0",
     "@material-ui/icons": "^3.0.1",
     "lodash": "^4.17.11",
-    "react": "^16.6.3",
+    "react": "^16.5.2",
     "react-document-title": "^2.0.3",
-    "react-dom": "^16.6.3",
-    "react-redux": "^6.0.0",
-    "redux-form": "^7.4.2",
-    "redux-saga": "^0.16.2",
-    "redux": "^4.0.1",
-    "redux-act": "^1.7.4",
+    "react-dom": "^16.5.2",
     "react-hotkeys": "^1.1.4",
-    "react-scripts": "2.1.1",
-    "styled-components": "^4.1.2"
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.1.5",
+    "redux": "^4.0.0",
+    "redux-act": "^1.7.4",
+    "redux-form": "^7.4.2",
+    "redux-saga": "^0.16.0",
+    "styled-components": "^3.4.9"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "mockrun": "REACT_APP_MOCK=true node react-scripts start"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "devDependencies": {
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3",
+    "redux-devtools-extension": "^2.13.5"
+  },
+  "lint-staged": {
+    "*.{js,json}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "semi": false
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "redux-devtools-extension": "^2.13.7"
-  }
+  ]
 }

@@ -49,7 +49,7 @@ export default connectTo(
                     onSubmit={submitLogin}
                     submitText='Login'
                     onBottomTextClick={() => to('register')}
-                    bottomText="Don't have an account? Redister"
+                    bottomText="Don't have an account? Register Here!"
                 />
             )
         }
