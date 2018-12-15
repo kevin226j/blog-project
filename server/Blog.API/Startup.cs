@@ -1,4 +1,6 @@
 using System.Text;
+using AutoMapper;
+using Blog.API.Models.Mapping;
 using Blog.API.Services;
 using Blog.API.Services.Abstraction;
 using Blog.Data;
@@ -54,6 +56,10 @@ namespace Blog.API
                     }
                     
                 );
+
+            var mappingConfig = new MapperConfiguration(mc => mc.AddProfile(new MappingProfile()));
+            services.AddSingleton(mappingConfig.CreateMapper());
+
             services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddSingleton<IAuthService>(
